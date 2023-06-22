@@ -1,0 +1,8 @@
+---
+- name: "Ensure NFS is not enabled"
+  hosts : all
+  tasks:
+    - name: "verify the nfs-server is not enabled"
+      systemd:
+        name: nfs-server
+        state: stopped
